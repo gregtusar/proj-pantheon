@@ -1,10 +1,10 @@
-# ClawdBots 🤖
+# Pantheon ⚡
 
-AI-powered interactive art installations for the Fairfield Farms meadow.
+AI deities in the meadow at Fairfield Farms.
 
 ## Vision
 
-Giant outdoor sculptures with brains. Each bot runs its own OpenClaw instance on a Raspberry Pi, connected to Arduino-driven kinetics, lights, sensors, and sound. Visitors walk up, interact, and each bot responds with its own personality.
+Monolithic outdoor sculptures with divine intelligence. Each deity runs its own OpenClaw instance on a Raspberry Pi, connected to Arduino-driven kinetics, lights, sensors, and sound. Visitors approach, and the gods speak.
 
 ## Architecture
 
@@ -54,7 +54,7 @@ Mesh networked bots that communicate, share visitor memories, coordinate display
 ## Project Structure
 
 ```
-proj-clawdbots/
+proj-pantheon/
 ├── README.md
 ├── docs/           # Design docs, research, references
 ├── hardware/       # Wiring diagrams, BOM, enclosure specs
