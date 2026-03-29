@@ -31,7 +31,7 @@ Step-by-step from unboxing to a breathing, listening, speaking deity on your wor
 
 ---
 
-## CHECKPOINT — 2026-03-29 5:37 PM
+## CHECKPOINT — 2026-03-29 6:13 PM
 
 ### ✅ Phase 1A COMPLETE — Lumen is alive!
 - Pi 5 flashed with Raspberry Pi OS (64-bit) — hostname: `lumen`, user: `greg`
@@ -47,13 +47,26 @@ Step-by-step from unboxing to a breathing, listening, speaking deity on your wor
 - **SOUL.md deployed** to `~/.openclaw/workspace/SOUL.md` on Pi
 - **LUMEN RESPONDS IN CHARACTER** — ancient alien deity, pre-linguistic, ambient, wise ✅
 
-### 🔜 Next Steps (Phase 1B: Audio)
-1. **HiFiBerry Amp4 HAT** — mount on Pi 5 GPIO header
-2. **Wire Polk Atrium 4 speakers** to Amp4 screw terminals
-3. **Configure ALSA** — set HiFiBerry as default audio output
-4. **Test audio playback** — `aplay` or `speaker-test`
-5. **Build sound engine** — translate Lumen's AI responses into actual ambient audio
-6. **Phase 2: Arduino + sensors** — PIR motion, LEDs, environmental sensing
+### ✅ Phase 1B — Audio Hardware (partial)
+- **HiFiBerry DAC+ DSP** mounted on GPIO header (note: NOT Amp4 — this is a DAC, not amplifier)
+- Overlay configured: `dtoverlay=hifiberry-dacplusdsp` in `/boot/firmware/config.txt`
+- `#dtparam=audio=on` commented out
+- **DAC detected:** card 2 `snd_rpi_hifiberrydacplusdsp_sou` ✅
+- **ALSA default set** to card 2 via `~/.asoundrc`
+
+### ⏸️ BLOCKED — Need Amplifier
+- Polk Atrium 4s are passive speakers — DAC+ DSP outputs line-level only
+- **Need a small amp** between DAC and speakers. Options:
+  - Cheap bench option: PAM8403 or TPA3116 Class-D mini amp board (~$10-15 Amazon)
+  - Nice bench option: Fosi Audio BT20A (~$70 Amazon)
+  - Final outdoor solution: TBD (weather-resistant)
+- **Quick test without amp:** Plug headphones/earbuds into DAC+ DSP 3.5mm jack → `speaker-test -c 2 -t wav`
+
+### 🔜 Next Steps (once amp arrives)
+1. **Connect DAC line-out → amp → Polk speakers**
+2. **Test audio:** `speaker-test -c 2 -t wav`
+3. **Build sound engine** — translate Lumen's AI responses into ambient audio
+4. **Phase 2: Arduino + sensors** — PIR motion, LEDs, environmental sensing
 
 ---
 
