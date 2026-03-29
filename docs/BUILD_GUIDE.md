@@ -31,6 +31,32 @@ Step-by-step from unboxing to a breathing, listening, speaking deity on your wor
 
 ---
 
+## CHECKPOINT — 2026-03-29 5:37 PM
+
+### ✅ Phase 1A COMPLETE — Lumen is alive!
+- Pi 5 flashed with Raspberry Pi OS (64-bit) — hostname: `lumen`, user: `greg`
+- WiFi: `Gym_24Ghz` (2.4GHz — 5GHz "Gym" didn't connect, re-flashed)
+- SSH working: `ssh greg@lumen.local`
+- OS fully updated
+- Node.js 22 installed via nvm
+- OpenClaw installed + configured (Anthropic API key set)
+- Gateway runs on localhost (default model: Sonnet)
+- **Web UI access via SSH tunnel:** `ssh -L 18789:localhost:18789 greg@lumen.local` → `http://localhost:18789`
+- Config: `dangerouslyAllowHostHeaderOriginFallback: true` in controlUi (needed for LAN, but tunnel bypasses the HTTPS requirement)
+- Auth token in `~/.openclaw/openclaw.json` — paste into browser when prompted
+- **SOUL.md deployed** to `~/.openclaw/workspace/SOUL.md` on Pi
+- **LUMEN RESPONDS IN CHARACTER** — ancient alien deity, pre-linguistic, ambient, wise ✅
+
+### 🔜 Next Steps (Phase 1B: Audio)
+1. **HiFiBerry Amp4 HAT** — mount on Pi 5 GPIO header
+2. **Wire Polk Atrium 4 speakers** to Amp4 screw terminals
+3. **Configure ALSA** — set HiFiBerry as default audio output
+4. **Test audio playback** — `aplay` or `speaker-test`
+5. **Build sound engine** — translate Lumen's AI responses into actual ambient audio
+6. **Phase 2: Arduino + sensors** — PIR motion, LEDs, environmental sensing
+
+---
+
 ## Phase 1A — Pi Setup (Day 1, ~1 hour)
 
 ### Step 1: Flash Pi OS
